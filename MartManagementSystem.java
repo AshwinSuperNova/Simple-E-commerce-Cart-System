@@ -94,9 +94,8 @@ public class MartManagementSystem {
     private ArrayList<String> itemInCart = new ArrayList<>();
     private ArrayList<Integer> priceAfterPurchase = new ArrayList<>();
     private ProductList list = new ProductList();
-    private Map<String, String> registeredCustomers = new HashMap<>(); // Stores registered customers' usernames and passwords
-    private ShoppingCart cart = new ShoppingCart(); // Shopping cart for customers
-
+    private Map<String, String> registeredCustomers = new HashMap<>();
+    private ShoppingCart cart = new ShoppingCart(); 
     public MartManagementSystem() {
     }
 
@@ -162,7 +161,7 @@ public class MartManagementSystem {
                             priceAfterPurchase.add(list.productPrices.get(purchasedList[i]));
 
                             Product selectedProduct = list.productObjects.get(purchasedList[i]);
-                            cart.addToCart(selectedProduct, 1); // Assuming quantity is always 1 for each product
+                            cart.addToCart(selectedProduct, 1); 
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -388,7 +387,7 @@ public class MartManagementSystem {
         }
     }
 
-    // Method to register a new customer
+   
     private void registerCustomer() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter username: ");
