@@ -23,7 +23,7 @@ import java.util.*;
             switch (choice) {
                 case 1:
                     
-                    mmSystem.admin();
+                  mmSystem.AdminLogin();
                     break;
                 case 2:
                     System.out.println("***** Customer Registration *****");
