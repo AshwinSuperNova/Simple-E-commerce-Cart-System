@@ -21,4 +21,4 @@
 ![Screenshot (328)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/9842320b-0ca1-4f55-b1d0-d139252e4861)
 ![Screenshot (329)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/0a02e0cc-8135-4ce3-8f48-05aa4cdc23d4)
 ![Screenshot (330)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/d35805c1-def2-4445-9863-a7ccaed51919)
-![Screenshot (331)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/bc1e6f86-53ba-4db2-8486-93b1bc4b2f64)
+
