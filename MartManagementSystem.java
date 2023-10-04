@@ -94,8 +94,9 @@ public class MartManagementSystem {
     private ArrayList<String> itemInCart = new ArrayList<>();
     private ArrayList<Integer> priceAfterPurchase = new ArrayList<>();
     private ProductList list = new ProductList();
-    private Map<String, String> registeredCustomers = new HashMap<>();
-    private ShoppingCart cart = new ShoppingCart(); 
+    private Map<String, String> registeredCustomers = new HashMap<>(); // Stores registered customers' usernames and passwords
+    private ShoppingCart cart = new ShoppingCart(); // Shopping cart for customers
+
     public MartManagementSystem() {
     }
 
@@ -161,7 +162,7 @@ public class MartManagementSystem {
                             priceAfterPurchase.add(list.productPrices.get(purchasedList[i]));
 
                             Product selectedProduct = list.productObjects.get(purchasedList[i]);
-                            cart.addToCart(selectedProduct, 1); 
+                            cart.addToCart(selectedProduct, 1); // Assuming quantity is always 1 for each product
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -255,11 +256,103 @@ public class MartManagementSystem {
             }
         }
 
-        private void cart() {
-            System.out.println("No \tItems\t\tPrice");
-            System.out.println("-----------------------------\n");
-            for (int i = 0; i < totalItemInCart; i++) {
-                System.out.println(i + "\t" + itemInCart.get(i) + "\t\t$ " + priceAfterPurchase.get(i));
+        @Override
+        public void admin() {
+            System.out.println("======= Mart Management System =======\n");
+            System.out.println("View as an Admin\n");
+            System.out.println("\tChoose Option: \n\t1: Add Item(s)\n\t2: Update Existing Item\n\t3: Remove Item\n\t4: View Stock\n\t5: Customer Record\n\t99: Exit");
+
+            Scanner inputAdmin = new Scanner(System.in);
+            System.out.print("Enter: ");
+            int adminInput = inputAdmin.nextInt();
+
+            if (adminInput == 1) {
+                // Add Item
+                System.out.println("Product name & price");
+                Scanner newPro = new Scanner(System.in);
+                System.out.print("Name: ");
+                String newName = newPro.nextLine();
+                list.product.add(newName);
+                System.out.print("Price: ");
+                int newPrice = newPro.nextInt();
+                list.productPrices.add(newPrice);
+                System.out.println("Item added successfully");
+                admin();
+            } else if (adminInput == 2) {
+                // Update Item
+                Scanner change = new Scanner(System.in);
+                System.out.print("Index no: ");
+                int index = change.nextInt();
+                System.out.print("Product name: ");
+                String name = change.next();
+                System.out.print("Price: ");
+                int price = change.nextInt();
+                list.product.set(index, name);
+                list.productPrices.set(index, price);
+                System.out.println("*** Item updated successfully ***");
+                admin();
+            } else if (adminInput == 3) {
+                // Remove Item
+                Scanner remove = new Scanner(System.in);
+                System.out.print("Item index no: ");
+                int removeItem = remove.nextInt();
+                list.product.remove(removeItem);
+                list.productPrices.remove(removeItem);
+                System.out.println("Item removed successfully");
+                admin();
+            } else if (adminInput == 4) {
+                // View Stock
+                stock();
+                System.out.println("Choose:\n\t1: Continue \n\t2: Exit");
+                System.out.print("Enter: ");
+                Scanner cr = new Scanner(System.in);
+                int num = cr.nextInt();
+                if (num == 1) {
+                    admin();
+                } else if (num == 2) {
+                    return;
+                } else {
+                    return;
+                }
+            } else if (adminInput == 5) {
+                customerRecord(); //calling record method which shows the customer details
+            } else if (adminInput == 99) {
+                main(null);
+            } else {
+                System.out.println("Please enter the correct choice!!");
+                admin();
+            }
+        }
+
+        @Override
+        public int stock() {
+            System.out.println("****** Full Stock details ************");
+            System.out.println("Total Products: " + list.product.size());
+            int sum = 0;
+            for (int d : list.productPrices) {
+                sum += d;
+            }
+            System.out.println("Total Mart Cost: $ " + sum);
+            System.out.println("_____________________________________________________");
+            System.out.println("Item no\t\tItem\t\t\tPrice\n");
+            for (int i = 0; i < list.product.size(); i++) {
+                System.out.println(i + "\t\t" + list.product.get(i) + "\t\t\t$" + list.productPrices.get(i));
+            }
+            System.out.println("-------------------------------------------");
+            return sum;
+        }
+
+        private void customerRecord() {
+            char[] array = new char[1000];
+            try {
+                FileReader input = new FileReader("newFile.txt");
+                input.read(array);
+                System.out.println("Customer Details: ");
+                if (input != null) {
+                    System.out.println(array);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
 
@@ -316,20 +409,6 @@ public class MartManagementSystem {
                 System.out.println("Entered incorrect choice.");
             }
         }
-
-        private void customerRecord() {
-            char[] array = new char[1000];
-            try {
-                FileReader input = new FileReader("newFile.txt");
-                input.read(array);
-                System.out.println("Customer Details: ");
-                if (input != null) {
-                    System.out.println(array);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     class ProductList {
@@ -366,16 +445,14 @@ public class MartManagementSystem {
 
             switch (choice) {
                 case 1:
-                  
-                    System.out.println("Admin functionality is not implemented yet.");
+                    MartI admin = mmSystem.new MMSystem();
+                    admin.admin();
                     break;
                 case 2:
-                   
                     System.out.println("***** Customer Registration *****");
                     mmSystem.registerCustomer();
                     break;
                 case 3:
-                   
                     System.out.println("***** Customer Login *****");
                     mmSystem.customerLogin();
                     break;
@@ -387,7 +464,6 @@ public class MartManagementSystem {
         }
     }
 
-   
     private void registerCustomer() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter username: ");
