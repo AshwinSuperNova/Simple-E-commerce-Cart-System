@@ -86,6 +86,7 @@ public class Customer extends MartManagementSystem {
                     Scanner cr = new Scanner(System.in);
                     int num = cr.nextInt();
                     if (num == 1) {
+                        //customer adds products to cart
                         System.out.println("Enter item index to add: ");
                         Scanner addItemIndex = new Scanner(System.in);
                         int addItemIdx = addItemIndex.nextInt();
