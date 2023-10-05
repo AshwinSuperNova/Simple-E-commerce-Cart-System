@@ -21,4 +21,12 @@
 ![Screenshot (328)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/9842320b-0ca1-4f55-b1d0-d139252e4861)
 ![Screenshot (329)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/0a02e0cc-8135-4ce3-8f48-05aa4cdc23d4)
 ![Screenshot (330)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/d35805c1-def2-4445-9863-a7ccaed51919)
+![Screenshot (339)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/803db88c-3091-49f0-86e3-abc7aaa03f3d)
+![Screenshot (338)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/1fd4f319-bdb1-48d1-9cb0-8256ad5009fd)
+![Screenshot (337)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/d2690994-ff0f-4c9d-98df-442a6345ec7a)
+![Screenshot (336)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/3569aa90-9ae6-4dfb-9ffd-7beac1a3c4e6)
+![Screenshot (335)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/7c28cfef-3082-41ba-b92f-c3f8721c559b)
+![Screenshot (334)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/22337431-3521-4b3d-9068-ed7a4a3e445d)
+![Screenshot (333)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/2ab717ef-a778-404c-813c-8703bcfb04e0)
+![Screenshot (332)](https://github.com/AshwinSuperNova/Simple-E-commerce-Cart-System/assets/126334039/8830e843-ff6b-4ab5-9607-a58ff32694d4)
 
