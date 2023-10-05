@@ -3,15 +3,15 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
 public class MartManagementSystem  {
-    String customerName;
-    String address;
-    int maxItemLimit = 5;
-    int totalItemInCart;
-    ArrayList<String> itemInCart = new ArrayList<>();
+    public static String customerName;
+     public static String address;
+     public static int maxItemLimit = 5;
+     public static int totalItemInCart;
+     public static ArrayList<String> itemInCart = new ArrayList<>();
     ArrayList<Integer> priceAfterPurchase = new ArrayList<>();
     ProductList list = new ProductList();
-    Map<String, String> registeredCustomers = new HashMap<>(); // Stores registered customers' usernames and passwords
-    ShoppingCart cart = new ShoppingCart(); // Shopping cart for customers
+    Map<String, String> registeredCustomers = new HashMap<>(); 
+    ShoppingCart cart = new ShoppingCart(); 
 
     public MartManagementSystem() {
     }
@@ -51,6 +51,9 @@ public class MartManagementSystem  {
         if(password.equals(conformpassword)){
         registeredCustomers.put(username, password);
         System.out.println("Registration successful!");
+        }else{
+          System.out.println("passwords doesnt match to each other");
+          registerCustomer();
         }
     }
       protected void AdminLogin() {
